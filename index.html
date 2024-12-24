@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link id="favicon" rel="icon" type="image/svg+xml" href="https://img.logoipsum.com/340.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aditi Onkar | Portfolio</title>
+    <script>
+      // Function to update the favicon based on the system theme
+      function updateFavicon() {
+        const favicon = document.getElementById("favicon");
+        const darkThemeFavicon = "/images/darklogo.png"; // Favicon for dark theme
+        const lightThemeFavicon = "https://img.logoipsum.com/338.svg"; // Favicon for light theme
+
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          favicon.href = darkThemeFavicon;
+        } else {
+          favicon.href = lightThemeFavicon;
+        }
+      }
+
+      // Initial check
+      updateFavicon();
+
+      // Listen for changes in the system theme
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
